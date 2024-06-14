@@ -14,6 +14,11 @@ Rudder::Rudder(int starboardPin, int baboardPin)
     lastPosition = 0;
 }
 
+/**
+ * Moves the rudder to the specified position.
+ * 
+ * @param position The target position in milliseconds.
+ */
 void Rudder::moveToPosition(long position)
 {
 
