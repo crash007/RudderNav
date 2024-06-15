@@ -7,6 +7,7 @@
 #include <Pid.h>
 #include <LSM303.h>
 
+
 // Pin definitions
 #define LED_BUILTIN 2
 #define MOVE_OUT_PIN 14
@@ -17,14 +18,17 @@
 
 // PID constants
 #define KP 0.03
-#define KI 0.005
+#define KI 0.0005
 #define KD 0.005
 #define ALPHA 0.1 
 
-// Function prototypes
-//float getMedianHeading(LSM303 &compass, int numReadings);
-//float lowPassFilter(float currentHeading, float previousHeading);
-//float getTiltCompensatedHeading(LSM303 &compass);
+// Global variables
+extern float referenceHeading;
+extern float previousHeading;
+extern float currentHeading;
+extern float heading;
+extern float error;
+extern float position;
 
 float lowPassFilter(float currentHeading, float previousHeading) {
     return ALPHA * currentHeading + (1 - ALPHA) * previousHeading;

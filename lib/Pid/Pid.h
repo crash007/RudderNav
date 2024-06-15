@@ -12,6 +12,12 @@ public:
     void start(){
         lastUpdated = millis();
     }
+    void setTunings(float kp, float ki, float kd, float Ts) {
+        this->KP = kp;
+        this->KI = ki;
+        this->KD = kd;
+        this->Ts = Ts;
+    }
 private:
     long lastUpdated;
     float KP;
@@ -19,7 +25,7 @@ private:
     float KD;
     float errorIntegral;
     float previousError;
-    long Ts;
+    float Ts;
 };
  
 #endif

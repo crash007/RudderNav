@@ -14,6 +14,7 @@ public:
 	void resetPosition(){
 		lastPosition = 0;
 	}
+	
     
 private:
 	uint8_t STARBOARD_PIN;
